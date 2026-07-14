@@ -1,10 +1,6 @@
-#include <cstdlib>
 #include <iostream>
 
-using namespace std;
-
-int main()
-{
-    system("PAUSE");
-    return EXIT_SUCCESS;
+int main(){
+	
+	return 0;
 }
