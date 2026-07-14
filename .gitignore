@@ -1,8 +1,12 @@
 *
-* > .gitignore.dev
-*
-* > .gitignore.dev
-*
-* > .gitignore.dev
-*
-* > .gitignore.dev
+!*/
+!*.cpp
+!*.h
+!*.dev
+!README.md
+!*.md
+!*.png
+!*.jpg
+!*.pdf
+!.gitkeep
+!.gitignore
