@@ -1,9 +1,5 @@
 #include <iostream>
 #include <string>
-<<<<<<< HEAD
-
-=======
->>>>>>> Fabián
 #include "libros.h"
 
 using namespace std;
