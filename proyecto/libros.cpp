@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
+<<<<<<< HEAD
 
+=======
+>>>>>>> Fabián
 #include "libros.h"
 
 using namespace std;
@@ -10,11 +13,25 @@ int registrarLibro(
     int &cantLibros
 )
 {
+    if(cantLibros >= 100)
+    {
+        cout << "\nLimite de libros alcanzado.\n";
+        return 0;
+    }
+
     cout << "\n===== REGISTRAR LIBRO =====\n";
 
     cout << "Codigo: ";
     cin >> libros[cantLibros].codigo;
-
+	for(int i = 0; i < cantLibros; i++)
+	{
+	    if(libros[i].codigo ==
+	       libros[cantLibros].codigo)
+	    {
+	        cout << "\nCodigo ya registrado.\n";
+	        return 0;
+	    }
+	}
     cin.ignore();
 
     cout << "Titulo: ";

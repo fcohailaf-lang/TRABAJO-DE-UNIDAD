@@ -1,6 +1,5 @@
 #ifndef REPORTES_H
 #define REPORTES_H
-
 #include "estructuras.h"
 
 int librosDisponibles(

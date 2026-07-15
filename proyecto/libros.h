@@ -1,6 +1,5 @@
 #ifndef LIBROS_H
 #define LIBROS_H
-
 #include "estructuras.h"
 
 int registrarLibro(

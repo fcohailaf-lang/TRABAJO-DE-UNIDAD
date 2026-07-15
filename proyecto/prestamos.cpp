@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include "prestamos.h"
 
 using namespace std;
@@ -15,6 +14,12 @@ int registrarPrestamo(
 {
     int codigoUsuario;
     int codigoLibro;
+    
+    if(cantPrestamos >= 100)
+    {
+        cout << "\nLimite de prestamos alcanzado.\n";
+        return 0;
+    }
 
     cout << "\n===== REGISTRAR PRESTAMO =====\n";
 
@@ -82,6 +87,8 @@ int registrarPrestamo(
     prestamos[cantPrestamos].diasRetraso = 0;
 
     prestamos[cantPrestamos].deuda = 0;
+    
+    prestamos[cantPrestamos].estado = 1;
 
     libros[posLibro].stock--;
 
@@ -130,6 +137,7 @@ int registrarDevolucion(
             prestamos[i].deuda =
                 prestamos[i].diasRetraso *
                 libros[posLibro].multaDiaria;
+                prestamos[i].estado = 0;
 
             cout << "\nDeuda generada: S/. "
                  << prestamos[i].deuda
@@ -159,26 +167,29 @@ int mostrarPrestamos(
 
     for(int i = 0; i < cantPrestamos; i++)
     {
-        cout << "\nPrestamo "
-             << prestamos[i].codigoPrestamo
-             << endl;
 
-        cout << "Usuario: "
-             << prestamos[i].codigoUsuario
-             << endl;
+    	if(prestamos[i].estado == 1)
+    	{
+        	cout << "\nPrestamo "
+            	 << prestamos[i].codigoPrestamo
+            	 << endl;
 
-        cout << "Libro: "
-             << prestamos[i].codigoLibro
-             << endl;
+        	cout << "Usuario: "
+            	 << prestamos[i].codigoUsuario
+            	 << endl;
 
-        cout << "Dias de retraso: "
-             << prestamos[i].diasRetraso
-             << endl;
+        	cout << "Libro: "
+            	 << prestamos[i].codigoLibro
+            	 << endl;
 
-        cout << "Deuda: S/. "
-             << prestamos[i].deuda
-             << endl;
-    }
+        	cout << "Dias de retraso: "
+            	 << prestamos[i].diasRetraso
+            	 << endl;
 
+        	cout << "Deuda: S/. "
+            	 << prestamos[i].deuda
+            	 << endl;
+    	}
+	}
     return 1;
 }

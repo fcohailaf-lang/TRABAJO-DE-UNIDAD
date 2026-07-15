@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-
 #include "usuarios.h"
 
 using namespace std;
@@ -10,11 +9,25 @@ int registrarUsuario(
     int &cantUsuarios
 )
 {
+	if(cantUsuarios >= 100)
+    {
+        cout << "\nLimite de usuarios alcanzado.\n";
+        return 0;
+    }
+    
     cout << "\n===== REGISTRAR USUARIO =====\n";
 
     cout << "Codigo: ";
     cin >> usuarios[cantUsuarios].codigo;
-
+    for(int i = 0; i < cantUsuarios; i++)
+	{
+	    if(usuarios[i].codigo ==
+	       usuarios[cantUsuarios].codigo)
+	    {
+	        cout << "\nCodigo ya registrado.\n";
+	        return 0;
+	    }
+	}
     cin.ignore();
 
     cout << "Nombre: ";

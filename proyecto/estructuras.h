@@ -31,6 +31,8 @@ struct Prestamo
     int diasPrestamo;
     int diasRetraso;
     float deuda;
+    int estado;
+
 };
 
 #endif

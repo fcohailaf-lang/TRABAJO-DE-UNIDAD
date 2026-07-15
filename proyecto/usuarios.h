@@ -1,6 +1,5 @@
 #ifndef USUARIOS_H
 #define USUARIOS_H
-
 #include "estructuras.h"
 
 int registrarUsuario(
